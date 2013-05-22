@@ -1,4 +1,4 @@
-1. General rules !
+1. General rules 
 
 - Code of the project should be hosted on github, you should have more than 10 commits to review creation process
 
