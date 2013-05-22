@@ -1,0 +1,42 @@
+1. General rules
+
+- Code of the project should be hosted on github, you should have more than 10 commits to review creation process
+
+- No BE is required, it would be great plus if you can use JS server implementations + DB (eg. Node.js + mongo)
+
+- All data should be stored in browser 'local storage' (optional, but would be nice)
+
+- Usage of any frameworks is allowed, except ticker implementation (will be described below).
+
+- Using backbone would be a plus
+
+2. Task
+
+Create 1-page application. It will consist of 3 views. First view represents defauls sorting of tickers, 2nd - ascending, 3rd - descending.
+
+On the left side of page 2 promotional items located. 1 Just an image with some text, learn more should not lead anywhere. Second - image slider with some images of your choice.
+
+Main goal is to create high performance digit tickers. They should start from different amount and tick up to infinite with different speed. Ticking step should always be the same - 0.01.
+Please look at example here - http://www.vernons.com/games/jackpots
+
+You should be able to 100+ tickers with no significant performance loss.
+
+Add new brings up the prompt to add new ticker. Consists of 2 fields - title and starting amount. Data should be saved to local storage.
+
+Ascending and Descending view should sort tickers in correct order.
+
+Search field should be functional and search by title, without submitting. Basically not relevant issues should be removed while you type.
+
+Ticker items can be deleted by clicking on them.
+
+3. Execution
+
+Goal of the task to create high performance tickers, please concentrate on creating those, than proceed to remaining functionality.
+
+4. Timing
+
+Results should be presented not later than 27.05.13
+
+5. Contacts
+
+If you have any questions please feel free to contact me via skype - nissaldor
