@@ -16,8 +16,16 @@
 			<div class="ex"></div>
 		</h3>
 		<form class="searchField">
-			<input type="text" value="Title" id="newtitle">
-			<input type="text" value="Starting value" id="newval">
+			<input type="text" 
+				value="Title"
+				onblur="if (this.value=='') this.value = 'Title'" 
+				onfocus="if (this.value=='Title') this.value = ''" 
+			id="newtitle">
+			<input type="text" 
+				value="Starting value" 
+				onblur="if (this.value=='') this.value = 'Starting value'" 
+				onfocus="if (this.value=='Starting value' || this.value=='Try again!') this.value = ''"
+			id="newval">
 		</form>
 		<div class="button1 floright" id="addnew">Add</div>
 	</div>
