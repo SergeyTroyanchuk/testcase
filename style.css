@@ -29,6 +29,9 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	text-align: center;
+	font-family: Arial;
+	font-size: 13px;
 }
 ol, ul {
 	list-style: none;
@@ -45,3 +48,173 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/* --------------------------------------------------------------------------- */
+.floleft  {float:left}
+.floright {float: right}
+.clearb   {clear:both}
+
+h2 {font-size: 15px; font-weight: bold; margin:10px 0 5px 0;}
+/* --------------------------------------------------------------------------- */
+
+#wrapper {
+	width: 900px;
+	margin:0 auto;  
+	text-align: left;
+}
+
+#head {
+	margin: 18px 0 18px 0;
+	height: 45px;
+	color:#fff;
+	border-radius: 5px;
+	background-color: #171717;
+}
+
+#head h1, #menu, #search {margin-top:15px;}
+
+#head h1 {
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+#menu {
+	margin-left: 50px;
+}
+
+.button_add {
+	position: absolute;
+	top:500px;
+	left:300px;
+	color:#fff;
+	background-color: #33cc33;
+	border:2px solid black;
+	border-radius: 7px;
+	width: 110px;
+	padding:5px;
+	text-align: center;
+}
+.button_add:hover {cursor: pointer}
+
+#menu a {
+	color:#666666; 
+	text-decoration: none;	
+	margin-left: 35px;
+}
+
+#menu a:hover, #menu a:active {
+	color:#fff;
+}
+
+#search {
+	margin-right: 12px;
+	color:#666666;
+}
+
+#search form input {
+	line-height: 30px;
+	margin-top: -9px;
+	border-radius: 15px;
+	border: none;
+	background-color: #666666;
+	width: 180px;
+	color: #fff;
+	font-size: 18px;
+	
+}
+
+#advertising {
+	width:350px;
+}
+
+#thumbnail {
+	border:2px solid #bdbdbd;	
+	padding:8px 0 8px 8px;
+	
+}
+
+#thumbnail p {
+	margin-right: 8px;
+}
+
+.button1 {
+	color:#fff;
+	background-color: #0041ff;
+	padding: 10px;
+	border-radius: 5px;
+	width: 80px;
+	margin:20px 0 5px 0;
+}
+.button1:hover { 
+	cursor: pointer; 
+}
+
+#carousel {
+	width:347px;
+	height: 250px;
+	border:2px solid #bdbdbd;	
+	margin-top: 10px;
+}
+
+#content {
+	margin-left: 25px;
+	width:510px;
+}
+
+#content .ticket {
+	text-align: center;
+	font-weight: bold;
+	width:125px;
+	margin-bottom: 35px;
+}
+
+#content .ticket p {
+	margin-bottom: 10px;
+}
+
+#newelement {
+	width: 300px;
+	position: absolute;
+	top:40%;
+	left:40%;
+	border:2px solid;
+	border-radius: 7px;
+	-webkit-box-shadow:  0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+    box-shadow:  0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+    overflow-x: hidden;
+    background-color: #fff;
+}
+#newelement h3 {
+	font-size: 16px;
+	font-weight: bold;
+	border-bottom: 2px solid #a3a3a3;
+	padding:10px;
+	position: relative;
+}
+
+#newelement input {
+	width:100%;
+	display: block;
+	border:none;
+	border-bottom: 2px solid #a3a3a3;
+	height: 30px;
+	font-size: 14px;
+	padding-left: 10px;
+
+}
+
+#newelement .button1 {
+	margin:10px;
+}
+
+#newelement h3 .ex {
+
+	position: absolute;
+	top:0;
+	left:260px;
+	width:35px;
+	height:35px;
+	background: url('x.png') no-repeat center center;
+}
+#newelement h3 .ex:hover {cursor: pointer}
+
+
