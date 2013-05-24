@@ -1,4 +1,11 @@
 $(document).ready(function(){
+	$(".button_add").click(function(){
+		$('#newelement').css('display', 'block');
+	});
+	$(".ex").click(function(){
+		$('#newelement').css('display', 'none');
+	});
+	
 	$("#addnew").click(function(){
 		var title = $('#newtitle').val();
 		var newval = $('#newval').val();
@@ -63,8 +70,8 @@ function addTicket(name,val)
 		var val = localStorage.getItem(name);
 		$("#content p:contains("+name+")").parent(this).children('span:first').html(val);
 	}
-	
 }
+
 
 
 /* check if input start value is digit! */
