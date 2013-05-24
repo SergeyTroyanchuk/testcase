@@ -1,37 +1,42 @@
 $(document).ready(function(){
 	$("#addnew").click(function(){
-		title = $('#newtitle').val();
-		newval = $('#newval').val();
-		isdigit = checkinput('#newval');
+		var title = $('#newtitle').val();
+		var newval = $('#newval').val();
+		var isdigit = checkinput('#newval');
 		
 		if(isdigit == true){
-			objtiket = new tiket(title,newval);
+			var objtiket = new tiket(title,newval);
 			//console.log(objtiket);
 			
+			/* testing local storage */			
+			if(typeof(Storage)!=="undefined")
+			  {
+			  	console.log('localStorage support!');
+			  	//localStorage.setItem(title,newval);
+			  	//SetItem(title,newval);
+			  	//localStorage.removeItem(name);
+			  	//localStorage.clear();
+			  	alldata = Object.keys(localStorage);
+			  	countdata = Object.keys(localStorage).length;
+			  	
+			  	//console.log(alldata);
+			  	//console.log(countdata);
+			  	if(title=='clear'){localStorage.clear();$('#content *').remove();}
+			  	else
+			  	{
+				  	addTicket(title,newval);
+			  	}
+			  	
+			  	
+			  }
+			else
+			  {
+			  	console.log('No web storage support...');
+			  }
 			
-if(typeof(Storage)!=="undefined")
-  {
-  	console.log('Yes! localStorage and sessionStorage support!');
-  	localStorage.setItem(title,newval);
-  	//SetItem(title,newval);
-  	the1 = localStorage.getItem('the1');
-  	//localStorage.removeItem(name);
-  	//localStorage.clear();
-  	alldata = Object.keys(localStorage);
-  	countdata = Object.keys(localStorage).length;
-  	
-  	console.log(alldata);
-  	console.log(countdata);
-  }
-else
-  {
-  	console.log('Sorry! No web storage support..');
-  }
-			
-			
-			
-			
-			
+			  /* testing content display */			
+	
+		
 		}else{ 
 			$('#newval').val('Try again!');
 			alert('Please insert digit value inti the field!');
@@ -39,20 +44,27 @@ else
 	});
 	
 	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
 });
 
 
-
+function addTicket(name,val)
+{
+	var alreadyExist = localStorage.getItem(name); /* if  alreadyExist == null - it's mean that there is no such value in the storage! */
+	if(alreadyExist == null)
+	{
+		localStorage.setItem(name,val);
+		var val = localStorage.getItem(name);
+		var writeticket = "<div class='ticket floleft'><p>"+name+"</p><span>"+val+"</span></div>";		
+		$('#content').append(writeticket);	
+	}
+	else
+	{
+		localStorage.setItem(name,val);
+		var val = localStorage.getItem(name);
+		$("#content p:contains("+name+")").parent(this).children('span:first').html(val);
+	}
+	
+}
 
 
 /* check if input start value is digit! */
