@@ -1,3 +1,7 @@
+/* global vars */
+var alldata   = Object.keys(localStorage);
+var countdata = Object.keys(localStorage).length;
+
 $(document).ready(function(){
 	$(".button_add").click(function(){
 		$('#newelement').css('display', 'block');
@@ -5,6 +9,8 @@ $(document).ready(function(){
 	$(".ex").click(function(){
 		$('#newelement').css('display', 'none');
 	});
+	
+	showAllTickets();
 	
 	$("#addnew").click(function(){
 		var title = $('#newtitle').val();
@@ -23,8 +29,8 @@ $(document).ready(function(){
 			  	//SetItem(title,newval);
 			  	//localStorage.removeItem(name);
 			  	//localStorage.clear();
-			  	alldata = Object.keys(localStorage);
-			  	countdata = Object.keys(localStorage).length;
+			  	//alldata = Object.keys(localStorage);
+			  	//countdata = Object.keys(localStorage).length;
 			  	
 			  	//console.log(alldata);
 			  	//console.log(countdata);
@@ -53,6 +59,22 @@ $(document).ready(function(){
 	
 });
 
+/* if there exist some tickets in storage we will show them! */
+function showAllTickets()
+{
+	//console.log('what in the storage? - '+countdata+'; all data - '+alldata);
+	var key = '';
+	var val = '';
+	if(countdata != 0)
+	{
+		for(var i=0; i<countdata; i++)
+		{
+			key = alldata[i];
+			val = localStorage.getItem(key);
+			drawTicket(key,val);
+		}
+	}
+}
 
 function addTicket(name,val)
 {
@@ -61,8 +83,7 @@ function addTicket(name,val)
 	{
 		localStorage.setItem(name,val);
 		var val = localStorage.getItem(name);
-		var writeticket = "<div class='ticket floleft'><p>"+name+"</p><span>"+val+"</span></div>";		
-		$('#content').append(writeticket);	
+		drawTicket(name,val);
 	}
 	else
 	{
@@ -72,7 +93,11 @@ function addTicket(name,val)
 	}
 }
 
-
+function drawTicket(name,val)
+{
+	var writeticket = "<div class='ticket floleft'><p>"+name+"</p><span>"+val+"</span></div>";		
+	$('#content').append(writeticket);	
+}
 
 /* check if input start value is digit! */
 function checkinput(inputid)
